@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+  
+}
+
+
+
+.logo {
+  background-color: #160040;
+  
+}
+.logo img{  
+  
+  width: 70px;
+  margin-top: 10px;
+  margin-bottom: -60px ;
+  margin-left:40%;
+  
+}
+body {
+  font-family: sans-serif;
+}
+
+main {
+  margin-top: 0;
+  width: 90%;
+  max-width: 800px;
+  margin: 32px auto;
+  color: rgb(69, 77, 82);
+  
+}
+drink-list {
+  display: block;
+  margin-top: 32px;
+  width: 100%;
+  padding: 16px;
+}
+ 
+
+/*HUBUNGI KAMI*/
+
+.hubungikami h1 {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 40px;
+  font-weight: 300;
+
+}
+
+.hubungikami {
+  margin: 100px auto;
+
+}
+
+.kotakhubungikami {
+  margin-top: 5px;
+  background: rgb(35, 35, 39);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  height: 250px;
+
+}
+
+.kotakhubungikami:hover {
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  color: #ff960b;
+}
+
+.kotakhubungikami img {
+  margin-top: 30px;
+  border-radius: 100px;
+}
+
+.kotakhubungikami {
+  color: white;
+  font-size: 20px;
+}
+
+.social-media {
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.media img:hover {
+  transition: 0.3s;
+  transform: scale(1.2);
+  box-shadow: 0 0 35px rgba(250, 249, 249, 0.233);
+}
+
+
+
+.footer {
+  margin-top: -100px;
+  width: 100%;
+  height: 100px;
+  background: #160040;
+}
+
+.footer p {
+  margin: auto;
+  text-align: center;
+  color: white;
+}
+
+.footer p a {
+  text-decoration: none;
+  color: white;
+}
+
+@media screen and (max-width: 537px){
+  .logo img{  
+    width: 50px; 
+}
+}
+@media screen and (max-width: 537px){
+  .logo img{  
+    width: 65px; 
+    margin-top: 5px;
+    margin-bottom: -60px ;   
+    margin-left:5%;
+    
+  }
+}
+
+@media screen and (max-width: 502px){
+  .logo img{  
+    width: 55px;
+    margin-left:5%;
+   }
+
+}
+
+@media screen and (max-width: 325px){
+  .logo img{  
+    width: 40px;    
+       
+    margin-top: 10px;
+    margin-bottom: -60px ; 
+  }
+}
+
+
+
+@media screen and (max-width: 1007px){
+  .logo img{  
+       
+    margin-left: 35%;    
+    margin-top: 10px;
+    margin-bottom: -60px ; 
+  }
+}
+
