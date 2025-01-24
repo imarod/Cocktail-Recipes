@@ -20,76 +20,138 @@ class SearchBar extends HTMLElement {
   render() {
     this.shadowDOM.innerHTML = `
           <style>
-          .search-container {
-            max-width: 800px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            padding: 16px;
-            border-radius: 5px;
-            display: flex;
-            position: sticky;
-            top: 10px;
-            background-color: white;
-          }
-          
-          .search-container > input {
-            width: 75%;
-            padding: 16px;
-            border: 0;
-            border-bottom: 1px solid orange;
-            font-weight: bold;
-          }
-          
-          .search-container > input:focus {
-            outline: 0;
-            border-bottom: 2px solid orange;
-          }
-          
-          .search-container > input:focus::placeholder {
-            
-            font-weight: bold;
-          }
-          
-          .search-container >  input::placeholder {
-            color: orange;
-            font-weight: normal;
-          }
-          
-          .search-container > button {
-            width: 23%;
-            cursor: pointer;
-            margin-left: auto;
-            padding: 16px;
-            background-color: #ff960b;
-            color: white;
-            border: 0;
-            text-transform: uppercase;
-            border-radius: 30px;
-          }
-          
-          @media screen and (max-width: 550px){
-            .search-container {
-              flex-direction: column;
-              position: static;
-            }
-            
-            .search-container > input {
-              width: 100%;
-              margin-bottom: 12px;
-            }
-            
-            .search-container > button {
-              width: 100%;
-            }
-          }
-          </style>
-          
-          <div id="search-container" class="search-container">
-            <input placeholder="Search cocktail recipes" id="searchElement" type="search">
-            <button id="searchButtonElement" type="submit">Search</button>
-          </div>
-        `;
+           .search-container {
+              display: flex;
+              align-items: center;           
+              border-radius: 15px;
+              overflow: hidden;
+              max-width: 100%;
+              width: 400px;
+              background-color: #fff;
+              transition: all 0.3s ease-in-out;
+              }           
 
-    this.shadowDOM.querySelector('#searchButtonElement').addEventListener('click', this._clickEvent);
+              .search-input {
+                flex: 1;
+                border: none;
+                padding: 12px 15px;
+                font-size: 16px;
+                color: #4a0060;
+                min-width: 0; /* Agar fleksibel di layar kecil */
+              }
+
+              .search-input:focus {
+                outline: none;
+              }
+
+              .search-button {
+                background-color: #ff8c00;
+                color: #fff;
+                border: none;
+                padding: 12px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background-color 0.3s ease-in-out;
+              }
+
+              .search-button:hover {
+                background-color: #ff9900;
+              }
+
+              .search-button:focus {
+                outline: none;
+              }
+
+              
+              .search-text {
+                display: inline-block; 
+              }
+
+              .search-icon {
+                display: none; 
+              }
+
+              /* Responsiveness */
+              @media (max-width: 768px) {
+                .search-container {
+                  width: 100%;
+                }
+            
+                .search-input {
+                  padding: 10px 12px;
+                  font-size: 14px;
+                }
+
+                
+                .search-button {
+                  padding: 10px 15px;
+                  font-size: 14px;
+                }
+              }
+
+              @media (max-width: 576px) {
+                .search-container {
+                  flex-direction: row;
+                }
+
+                .search-text {
+                  display: none; 
+                }
+
+               .search-icon {
+                display: inline-block; 
+                font-size: 2px;
+                background-color: white; 
+                color: #ff8c00; 
+                padding: 7px; 
+                border-radius: 50%; 
+              }
+              .search-input {
+                padding: 10px;
+                font-size: 12px;
+              }
+
+              .search-button {
+                font-size: 14px;
+                width: 50px; 
+                }
+              }
+
+              @media (max-width: 375px) {
+                .search-input {
+                  font-size: 12px;
+                  padding: 8px;
+                }
+
+                .search-button {
+                  font-size: 12px;
+                  padding: 8px;
+                }
+              }
+
+
+              </style>
+
+                <div id="search-container" class="search-container">
+                    <input class="search-input" placeholder="Search cocktail recipes..." id="searchElement" type="search">
+                      <button class="search-button" id="searchButtonElement" type="submit">
+                      <span class="search-text">Search</span>
+                      <i class="fas fa-search search-icon"></i></button>
+              </div>     
+            `;
+
+            this.shadowDOM.querySelector('#searchButtonElement').addEventListener('click', () => {
+              this._clickEvent();
+            
+              const drinkList = document.querySelector("detail-section");
+              if (drinkList) {
+                drinkList.style.display = "none";
+              }
+            });                 
+    
   }
 }
 
