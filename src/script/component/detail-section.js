@@ -82,7 +82,7 @@ class DetailSection extends HTMLElement {
         }
         .ingredient-item {
           padding: 8px;
-          background: #f3f4f6;
+          background: #FFECD4;
           border-radius: 6px;
         }
         .back-button {

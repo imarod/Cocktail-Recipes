@@ -3,6 +3,7 @@ import "../component/drink-item.js";
 import "../component/drink-list.js";
 import "../component/search-bar.js";
 import "../component/detail-section.js";
+import logo from '../../styles/logo.png';
 import DataSource from "../data/data-source.js";
 
 const main = async () => {
@@ -14,6 +15,11 @@ const main = async () => {
   const drinkListElement = document.querySelector("drink-list");
   const logoElement = document.querySelector(".home");
   const loadingElement = document.getElementById("loading");
+
+  const logoimg = document.querySelector('.logo img');
+  logoimg.src = logo; 
+  const icon = document.querySelector('.icon-i');
+  icon.href = logo; 
 
   if (!drinkListElement || !searchElement || !logoElement || !loadingElement) {
     console.error("Required elements not found");
